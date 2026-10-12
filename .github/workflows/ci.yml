@@ -1,0 +1,24 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  repro:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+          activate-environment: true
+      - name: Install
+        run: uv pip install -e ".[dev,docs]"
+      - name: Lint
+        run: ruff check .
+      - name: Run every chapter's reproduction
+        run: pytest -v
+      - name: Build the site
+        run: mkdocs build --strict
