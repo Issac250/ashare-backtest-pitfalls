@@ -1,5 +1,5 @@
 site_name: A 股回测避坑手册
-site_description: 回测是怎么骗人的，以及怎么抓住它。每一条都附可以运行的最小复现。
+site_description: 用 12 个可运行的 Python 例子，检查 A 股回测的成交、数据和统计口径。
 site_url: https://issac250.github.io/ashare-backtest-pitfalls/
 repo_url: https://github.com/Issac250/ashare-backtest-pitfalls
 repo_name: Issac250/ashare-backtest-pitfalls
@@ -48,17 +48,17 @@ markdown_extensions:
 nav:
   - 首页: index.md
   - 成交:
-      - 01 收盘价成交不了: 01-close-price-fills.md
-      - 02 开盘涨停与判断时点: 02-limit-gate-timing.md
+      - 01 收盘信号与成交价: 01-close-price-fills.md
+      - 02 涨跌停判断的时点: 02-limit-gate-timing.md
       - 03 停牌与复牌跳空: 03-halt-resumption-gap.md
   - 数据:
-      - 04 未复权价: 04-unadjusted-prices.md
-      - 05 数据覆盖率是未来函数: 05-coverage-lookahead.md
-      - 06 比值的分母也有日期: 06-ratio-denominator-date.md
-      - 07 停牌造出来的相对收益: 07-halt-relative-return.md
+      - 04 除权日的持仓估值: 04-unadjusted-prices.md
+      - 05 缺失值与股票池: 05-coverage-lookahead.md
+      - 06 比值字段的日期: 06-ratio-denominator-date.md
+      - 07 停牌与相对收益: 07-halt-relative-return.md
   - 统计与对照:
       - 08 年化收益怎么算: 08-arithmetic-annualization.md
-      - 09 逐行平均不是组合收益: 09-row-average.md
-      - 10 基准本身是算法造出来的: 10-benchmark-rebalance.md
-      - 11 全样本被一个时代撑着: 11-one-era-dominates.md
-      - 12 筛选的对照是同样大小的随机子集: 12-screen-control.md
+      - 09 平均收益的权重: 09-row-average.md
+      - 10 基准的调仓约定: 10-benchmark-rebalance.md
+      - 11 分段看策略表现: 11-one-era-dominates.md
+      - 12 筛选条件的对照: 12-screen-control.md
