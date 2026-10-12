@@ -1,13 +1,7 @@
-"""03 停牌：买不进去的复牌跳空。
+"""03 比较公告日起的价格变化与复牌后入场的收益。
 
-A company announces a major event and its stock is halted for 20 sessions.
-While halted the data carries frozen rows; the whole move lands on the
-resumption bar. An event study that "buys at the announcement-day close" books
-that gap. An account cannot: there is no trading until the stock reopens, and
-by then the open already carries the gap.
-
-Synthetic assumption, stated so the direction is visible: resumption gaps
-average +20% (event news skewed good). Nothing else in the panel has alpha.
+合成股票公告后停牌 20 个交易日，复牌跳空均值设为 +20%。
+模型设定复牌开盘可以交易，检查停牌前的价格是否被误作新买单成本。
 """
 import numpy as np
 import pandas as pd

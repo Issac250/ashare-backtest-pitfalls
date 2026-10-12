@@ -1,9 +1,7 @@
-"""02 成交时点与判断时点不一致：用收盘涨跌停判断开盘能否成交。
+"""02 检查涨跌停判断是否用了正确时点。
 
-Orders fill at the open, so "can I buy / sell this?" must be decided from the
-open. A common shortcut reuses a close-based limit flag (close vs preclose).
-That flag is not known at 09:30: it rejects every stock that later closes
-limit-up, i.e. exactly the ones that rally after you could have bought them.
+订单按开盘价执行，只替换开盘和收盘两种涨跌停标记。
+使用随机评分和零费用，隔离标记口径的影响。
 """
 from ashare_bt import BacktestConfig, run_backtest
 from ashare_bt.sizing import limit_prices

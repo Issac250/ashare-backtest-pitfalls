@@ -1,9 +1,7 @@
-"""01 收盘价成交不了：买卖价差跳动（bid-ask bounce）制造的假收益。
+"""01 比较收盘到收盘与下一开盘成交。
 
-Every stock has a true value that is a pure random walk, so no strategy can
-beat it. Each printed price (open or close) lands on the bid or the ask at
-random. A one-day reversal signal then looks spectacular on close-to-close
-returns, and earns nothing once orders fill at the next open.
+潜在价格按随机游走变化，记录价格随机落在价差两侧。
+用反转评分选股，检查成交时点和费用如何改变结果。
 """
 import numpy as np
 import pandas as pd
