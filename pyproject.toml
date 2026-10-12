@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ashare-backtest-pitfalls"
+version = "0.1.0"
+description = "How A-share backtests lie, one runnable reproduction per pitfall, on synthetic data."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [{ name = "Issac250" }]
+dependencies = [
+  "ashare-bt @ git+https://github.com/Issac250/ashare-bt@a84cf54ad4f67e677ecaadbf3fbff92cf48fe365",
+  "numpy>=1.26",
+  "pandas>=2.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+docs = ["mkdocs>=1.6", "mkdocs-material>=9.5"]
+
+[project.urls]
+Homepage = "https://issac250.github.io/ashare-backtest-pitfalls/"
+Source = "https://github.com/Issac250/ashare-backtest-pitfalls"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+# The book is the docs/ and repro/ folders; nothing is installed as a package.
+[tool.hatch.build.targets.wheel]
+bypass-selection = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501", "E731"]
