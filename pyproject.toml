@@ -11,9 +11,10 @@ license = "MIT"
 requires-python = ">=3.11"
 authors = [{ name = "Issac250" }]
 dependencies = [
-  "ashare-bt @ git+https://github.com/Issac250/ashare-bt@a84cf54ad4f67e677ecaadbf3fbff92cf48fe365",
-  "numpy>=1.26",
-  "pandas>=2.2",
+  "ashare-bt @ git+https://github.com/Issac250/ashare-bt@v0.1.0",
+  # Exact: the chapters quote numbers, and a new random stream would move them.
+  "numpy==2.5.4",
+  "pandas==3.0.6",
 ]
 
 [project.optional-dependencies]

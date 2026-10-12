@@ -9,7 +9,8 @@ from pathlib import Path
 
 import pytest
 
-REPRO = Path(__file__).resolve().parents[1] / "repro"
+ROOT = Path(__file__).resolve().parents[1]
+REPRO = ROOT / "repro"
 SCRIPTS = sorted(p for p in REPRO.glob("[0-9][0-9]_*.py"))
 
 
@@ -23,3 +24,8 @@ def test_repro_runs(script):
                           text=True, timeout=600)
     assert proc.returncode == 0, f"{script.name} failed:\n{proc.stdout}\n{proc.stderr}"
     assert "(wrong" in proc.stdout and "(right" in proc.stdout, "print the wrong and the right number"
+    # The numbers quoted in the chapter must be the numbers the script prints today.
+    doc = next((ROOT / "docs").glob(f"{script.stem[:2]}-*.md"))
+    quoted = doc.read_text(encoding="utf-8").split("```text", 1)[1].split("```", 1)[0]
+    for line in filter(None, (ln.strip() for ln in quoted.splitlines())):
+        assert line in proc.stdout, f"{doc.name} quotes a line the script no longer prints: {line!r}"
