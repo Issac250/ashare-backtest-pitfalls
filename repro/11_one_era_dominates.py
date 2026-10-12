@@ -1,10 +1,7 @@
-"""11 全样本数字被一个已经结束的时代撑着。
+"""11 比较全样本与分段 Sharpe。
 
-A factor pays a premium for the first two thirds of the sample and nothing in
-the last third (the trade got crowded, the rules changed -- the reason does not
-matter). The full-sample Sharpe still looks healthy, because it averages the
-good era in. The latest segment is the honest estimate of what running it today
-would feel like, and it is the one a full-sample number hides.
+合成特征在前两段带来正溢价，第三段设为零。
+对同一条回测日收益分段，查看汇总指标隐藏了哪些时间变化。
 """
 import numpy as np
 import pandas as pd

@@ -1,12 +1,7 @@
-"""09 逐行平均不是组合收益，而且能把结论的符号弄反。
+"""09 比较逐行平均与按信号日等权平均。
 
-A rule picks stocks every day; a quick study averages the 20-session forward excess
-return over all (date, code) rows. A portfolio does something else: it gives
-every DAY the same weight, however many names qualified that day.
-
-Synthetic assumption: the rule qualifies many names in rising markets (where
-they beat the market a little) and few in falling markets (where they lag a
-lot). Row-weighting lets the crowded good days drown out the sparse bad ones.
+合成数据让不同市场状态下的入选数量和未来窗口收益不同。
+两种聚合使用相同记录；按日期聚合的结果仍是前瞻窗口统计。
 """
 import numpy as np
 import pandas as pd

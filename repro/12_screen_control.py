@@ -1,15 +1,7 @@
-"""12 一个「筛选」的对照不是 0，是同样大小的随机子集。
+"""12 比较筛选池、全池和同大小随机池。
 
-Adding a screen to a universe does two things at once: it removes particular
-stocks, and it makes the pool smaller. A smaller pool costs money by itself:
-on every rebalance the ranking has fewer good names to choose from, so the
-book holds names that rank lower. Comparing "with screen" against "without"
-charges that shrinkage to the screen.
-
-Synthetic setup: a characteristic x earns a premium, and the book buys the top
-20 by x. The screen keeps 40% of the stocks, and the stocks it removes really
-are slightly worse (they drift down a little). So the screen is genuinely
-useful -- but not useful enough to pay for a pool 60% smaller.
+合成筛选同时缩小股票池，并保留略有优势的一组股票。
+运行五个固定种子的随机池，区分最终组合表现与筛选的增量信息。
 """
 import numpy as np
 import pandas as pd

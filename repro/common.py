@@ -1,4 +1,4 @@
-"""Small helpers shared by the reproductions. Everything here is synthetic."""
+"""复现脚本共用的合成数据转换和指标函数。"""
 from __future__ import annotations
 
 import numpy as np

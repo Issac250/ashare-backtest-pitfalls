@@ -1,11 +1,7 @@
-"""10 基准是算法产物：「等权全市场」默认是每日零成本再平衡。
+"""10 比较不同调仓约定下的等权基准。
 
-The usual "market" benchmark is the average daily return across all stocks,
-compounded: an equal-weight book rebalanced back to equal weight EVERY day, at
-no cost. When prices mean-revert a little around their fair value (as small
-caps do), that daily rebalancing keeps buying the day's losers and selling the
-winners, and harvests a return nobody can collect: it needs hundreds of trades
-a day for free. What you can actually buy is far lower.
+合成价格包含会衰减的短期偏离。比较每日免费再平衡、
+买入持有，以及引擎每 20 个信号日调仓并计入费用的结果。
 """
 import numpy as np
 import pandas as pd

@@ -1,13 +1,7 @@
-"""08 算术年化高估复利，以及「一年 252 个交易日」。
+"""08 对同一份日收益采用三种年化口径。
 
-Part 1. Annualising the MEAN daily return, (1 + mean)^252 - 1, ignores the
-variance drag (波动拖累): a -50% day followed by a +50% day averages 0% but
-loses 25%. On a volatile small-cap-like series the gap is several points a year.
-
-Part 2. A-share years have about 242-244 trading days, not 252 (the exchange
-closes for the Spring Festival and National Day weeks, among others). Counting
-years as trading days / 252 makes the sample look shorter than it was, which
-overstates CAGR whenever the total return is positive.
+比较平均日收益推算值、按日历时间计算的 CAGR，
+以及按交易日数 / 252 计算年数的 CAGR。交易日历是简化设定。
 """
 import numpy as np
 import pandas as pd
