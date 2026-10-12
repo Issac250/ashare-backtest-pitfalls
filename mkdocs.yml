@@ -57,7 +57,7 @@ nav:
       - 06 比值的分母也有日期: 06-ratio-denominator-date.md
       - 07 停牌造出来的相对收益: 07-halt-relative-return.md
   - 统计与对照:
-      - 08 算术年化与 252 天: 08-arithmetic-annualization.md
+      - 08 年化收益怎么算: 08-arithmetic-annualization.md
       - 09 逐行平均不是组合收益: 09-row-average.md
       - 10 基准本身是算法造出来的: 10-benchmark-rebalance.md
       - 11 全样本被一个时代撑着: 11-one-era-dominates.md
