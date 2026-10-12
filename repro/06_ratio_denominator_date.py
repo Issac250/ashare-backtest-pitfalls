@@ -1,11 +1,7 @@
-"""06 比值的分母也有日期：供应商算好的「占市值比例」常常用的是事后的市值。
+"""06 检查比值的分母是否来自信号日之后。
 
-An event is announced on day t and takes effect on day t+20. Its size in yuan
-is fixed at t. A vendor publishes "size / market cap", but the market cap is
-the one on the day BEFORE the event takes effect -- information from after t.
-A stock that falls between t and the event date gets a bigger ratio, so it is
-more likely to pass a "big event" threshold; and the fall is part of the
-return we are measuring from t. The event has no effect at all in this panel.
+事件金额在 t 日确定，生效前的价格变化会影响事后市值。
+分别用信号日和事后市值分类，再比较两组的未来收益。
 """
 import numpy as np
 import pandas as pd

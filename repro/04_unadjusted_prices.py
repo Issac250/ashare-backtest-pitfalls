@@ -1,11 +1,7 @@
-"""04 未复权价：送转和分红被记成亏损，而基准没有这个问题。
+"""04 比较固定股数估值与除权参考价推进持仓价值。
 
-Twenty stocks, bought once and held. A few of them do a bonus issue (10送10:
-the raw price halves overnight, the holder's wealth does not move) and all of
-them pay a yearly cash dividend. Valuing the book as shares x RAW close books
-every bonus issue as a -50% day and every dividend as a loss. The benchmark,
-built from the exchange's daily percentage change (a total return), carries
-none of that, so the strategy "loses" to a benchmark that holds the same stocks.
+合成数据包含送转和分红。引擎与对照使用相同的除权参考价，
+用于检查价格调整带来的估值差别，不是完整的现金分红账户模型。
 """
 import numpy as np
 import pandas as pd

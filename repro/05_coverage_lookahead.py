@@ -1,13 +1,7 @@
-"""05 数据覆盖率是未来函数：只有活下来的公司才有数据。
+"""05 检查字段缺失是否提前排除了后来退市的公司。
 
-A new dataset (say, a per-company attribute table) is rebuilt by the vendor
-from TODAY's listing, so companies that were delisted inside the sample have
-no rows at all. "Keep the rows where the field is not missing" then means
-"keep the companies that will survive" -- a filter that reads the future.
-
-Synthetic assumption: companies that end up delisted drift down over their
-final 120 sessions, as most A-share delistings do. The book holds every
-eligible stock equally; nothing about the strategy changes between the runs.
+合成字段只覆盖存续公司，退市公司在最后 120 个交易日设向下漂移。
+比较有字段的股票池与当时仍在行情里的全部股票。
 """
 import numpy as np
 import pandas as pd

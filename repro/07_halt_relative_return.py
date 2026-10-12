@@ -1,12 +1,7 @@
-"""07 停牌造出来的相对收益：均值看不出，尾巴里全是它。
+"""07 检查停牌记录是否影响相对收益的极端排名。
 
-The market crashes for two months. A few stocks are halted for long stretches;
-their price is frozen while everything else falls, and on resumption it jumps
-to where it would have been. Rank month-end snapshots by their 120-session
-return relative to the market: the "biggest winners" are crowded with stocks
-that were simply frozen through the crash. Their MEAN relative return is
-ordinary, so a test on averages sees nothing. Only the tail is polluted, and
-reading the top winners as case studies samples exactly that tail.
+停牌时记录价格冻结，复牌时补到模型价格。
+比较均值，以及停牌记录在前 10% 和前 1% 样本中的占比。
 """
 import numpy as np
 
