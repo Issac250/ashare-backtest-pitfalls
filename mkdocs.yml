@@ -1,0 +1,64 @@
+site_name: A 股回测避坑手册
+site_description: 回测是怎么骗人的，以及怎么抓住它。每一条都附可以运行的最小复现。
+site_url: https://issac250.github.io/ashare-backtest-pitfalls/
+repo_url: https://github.com/Issac250/ashare-backtest-pitfalls
+repo_name: Issac250/ashare-backtest-pitfalls
+edit_uri: edit/main/docs/
+copyright: Copyright &copy; 2026 Issac250 · MIT License
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.instant
+    - navigation.footer
+    - content.code.copy
+    - search.highlight
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.snippets:
+      base_path: ["."]
+      check_paths: true
+
+nav:
+  - 首页: index.md
+  - 成交:
+      - 01 收盘价成交不了: 01-close-price-fills.md
+      - 02 开盘涨停与判断时点: 02-limit-gate-timing.md
+      - 03 停牌与复牌跳空: 03-halt-resumption-gap.md
+  - 数据:
+      - 04 未复权价: 04-unadjusted-prices.md
+      - 05 数据覆盖率是未来函数: 05-coverage-lookahead.md
+      - 06 比值的分母也有日期: 06-ratio-denominator-date.md
+      - 07 停牌造出来的相对收益: 07-halt-relative-return.md
+  - 统计与对照:
+      - 08 算术年化与 252 天: 08-arithmetic-annualization.md
+      - 09 逐行平均不是组合收益: 09-row-average.md
+      - 10 基准本身是算法造出来的: 10-benchmark-rebalance.md
+      - 11 全样本被一个时代撑着: 11-one-era-dominates.md
+      - 12 筛选的对照是同样大小的随机子集: 12-screen-control.md
